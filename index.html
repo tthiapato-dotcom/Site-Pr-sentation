@@ -1,0 +1,1637 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thiapato Thioye : Recherche d'une alternance en Data analyste </title>
+
+    <meta name="description"
+          content="Portfolio d'une étudiante en Sciences des Données spécialisée en analyse de données, statistiques et Business Intelligence.">
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --primary: #6c63ff;
+            --secondary: #00b4d8;
+            --dark: #111827;
+            --dark2: #1f2937;
+            --text: #374151;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --gradient: linear-gradient(135deg, #6c63ff, #00b4d8);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: var(--light);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 25px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: var(--dark);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        #accueil {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 130px 8% 80px;
+
+            background:
+                radial-gradient(circle at 80% 20%, rgba(108,99,255,0.18), transparent 30%),
+                radial-gradient(circle at 20% 80%, rgba(0,180,216,0.12), transparent 30%),
+                var(--light);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text .small-title {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.05;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--dark2);
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 10px 25px rgba(108,99,255,0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(108,99,255,0.35);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+
+        /* =====================================================
+           DATA ILLUSTRATION
+        ===================================================== */
+
+        .data-illustration {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            margin: auto;
+
+            background: white;
+            border-radius: 35px;
+
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+
+            padding: 30px;
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .chart-title {
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .bars {
+            height: 190px;
+
+            display: flex;
+            align-items: end;
+            justify-content: center;
+
+            gap: 18px;
+        }
+
+        .bar {
+            width: 35px;
+            border-radius: 8px 8px 0 0;
+
+            background: var(--gradient);
+
+            animation: grow 2s ease;
+        }
+
+        .bar:nth-child(1) {
+            height: 60px;
+        }
+
+        .bar:nth-child(2) {
+            height: 100px;
+        }
+
+        .bar:nth-child(3) {
+            height: 140px;
+        }
+
+        .bar:nth-child(4) {
+            height: 85px;
+        }
+
+        .bar:nth-child(5) {
+            height: 165px;
+        }
+
+        @keyframes grow {
+            from {
+                height: 0;
+            }
+        }
+
+        .chart-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-header {
+            max-width: 750px;
+            margin: 0 auto 55px;
+            text-align: center;
+        }
+
+        .section-header .label {
+            color: var(--primary);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        .section-header h2 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin: 8px 0 15px;
+        }
+
+        .section-header p {
+            color: #6b7280;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-container {
+            max-width: 1050px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: var(--gradient);
+            color: white;
+
+            padding: 40px;
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow: 0 20px 45px rgba(108,99,255,0.2);
+        }
+
+        .profile-circle {
+            width: 130px;
+            height: 130px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.2);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 3rem;
+        }
+
+        .profile-card h3 {
+            font-size: 1.5rem;
+        }
+
+        .profile-card p {
+            opacity: 0.9;
+        }
+
+        .about-text {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           COMPETENCES
+        ===================================================== */
+
+        .skills-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+
+            transition: 0.35s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.09);
+            border-color: rgba(108,99,255,0.3);
+        }
+
+        .skill-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: #f0efff;
+
+            font-size: 1.7rem;
+
+            margin-bottom: 18px;
+        }
+
+        .skill-card h3 {
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 5px 0;
+            color: #6b7280;
+        }
+
+        .skill-card li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+
+        /* =====================================================
+           EXPERIENCES
+        ===================================================== */
+
+        .timeline {
+            max-width: 950px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 20px;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background: var(--gradient);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 65px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 7px;
+            top: 5px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            border: 7px solid var(--primary);
+
+            z-index: 2;
+        }
+
+        .timeline-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+        }
+
+        .timeline-card .date {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .timeline-card h3 {
+            color: var(--dark);
+            font-size: 1.35rem;
+            margin: 5px 0;
+        }
+
+        .timeline-card h4 {
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timeline-card ul {
+            margin-left: 20px;
+        }
+
+
+        /* =====================================================
+           FORMATIONS
+        ===================================================== */
+
+        .education-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border-top: 5px solid var(--primary);
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .education-card .year {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .education-card h3 {
+            color: var(--dark);
+            margin: 8px 0;
+        }
+
+
+        /* =====================================================
+           LANGUES / LOISIRS
+        ===================================================== */
+
+        .two-columns {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .info-card h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+
+        /* =====================================================
+           ALTERNANCE
+        ===================================================== */
+
+        .alternance {
+            max-width: 1000px;
+            margin: auto;
+
+            padding: 50px;
+
+            border-radius: 30px;
+
+            background: var(--gradient);
+
+            color: white;
+
+            text-align: center;
+
+            box-shadow: 0 20px 50px rgba(108,99,255,0.25);
+        }
+
+        .alternance h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .alternance p {
+            max-width: 700px;
+            margin: auto auto 25px;
+        }
+
+        .alternance .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        #contact {
+            background: var(--dark);
+            color: white;
+        }
+
+        #contact .section-header h2 {
+            color: white;
+        }
+
+        #contact .section-header p {
+            color: #9ca3af;
+        }
+
+        .contact-grid {
+            max-width: 900px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 25px;
+
+            background: var(--dark2);
+
+            border-radius: 15px;
+
+            text-align: center;
+        }
+
+        .contact-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: #9ca3af;
+        }
+
+        .contact-card a:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .data-illustration {
+                width: 320px;
+                height: 320px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .alternance {
+                padding: 35px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header>
+
+    <nav>
+
+        <a href="#accueil" class="logo">
+            Data<span>Portfolio</span>
+        </a>
+
+        <ul>
+
+            <li>
+                <a href="#apropos">À propos</a>
+            </li>
+
+            <li>
+                <a href="#competences">Compétences</a>
+            </li>
+
+            <li>
+                <a href="#experiences">Expériences</a>
+            </li>
+
+            <li>
+                <a href="#formations">Formations</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     ACCUEIL
+========================================================= -->
+
+<section id="accueil">
+
+    <div class="hero-container">
+
+
+        <div class="hero-text">
+
+            <div class="small-title">
+                👋 BIENVENUE SUR MON PORTFOLIO
+            </div>
+
+            <h1>
+                Étudiante en
+                <span>Sciences des Données</span>
+            </h1>
+
+            <h2>
+                Data • Statistiques • Business Intelligence
+            </h2>
+
+            <p>
+                Étudiante en Sciences des Données, organisée,
+                rigoureuse et autonome, je développe mes compétences
+                en analyse de données, statistiques, programmation
+                et outils décisionnels.
+            </p>
+
+            <p>
+                🎯 À la recherche d'une alternance de 2 ans.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Me contacter
+                </a>
+
+                <a href="#competences" class="btn btn-outline">
+                    Découvrir mes compétences
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Illustration -->
+
+        <div class="data-illustration">
+
+            <div class="chart-title">
+                📊 Data Analytics
+            </div>
+
+            <div class="bars">
+
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+
+            </div>
+
+            <div class="chart-bottom">
+
+                <span>DATA</span>
+                <span>ANALYSE</span>
+                <span>RESULTS</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     À PROPOS
+========================================================= -->
+
+<section id="apropos">
+
+    <div class="section-header">
+
+        <div class="label">
+            À PROPOS
+        </div>
+
+        <h2>
+            Qui suis-je ?
+        </h2>
+
+        <p>
+            Un profil scientifique orienté vers la donnée et
+            l'analyse.
+        </p>
+
+    </div>
+
+
+    <div class="about-container">
+
+
+        <div class="profile-card">
+
+            <div class="profile-circle">
+                📊
+            </div>
+
+            <h3>
+                Sciences des Données
+            </h3>
+
+            <p>
+                Analyse • Statistiques • Programmation
+            </p>
+
+        </div>
+
+
+        <div class="about-text">
+
+            <p>
+                Actuellement étudiante en Sciences des Données à
+                l'Université Marie et Louis Pasteur, je m'intéresse
+                particulièrement à l'analyse et à l'interprétation
+                des données.
+            </p>
+
+            <p>
+                Titulaire d'un baccalauréat scientifique sénégalais
+                avec mention Bien, j'ai développé une approche
+                rigoureuse et méthodique du travail.
+            </p>
+
+            <p>
+                Mes expériences dans les études de marché m'ont
+                permis de mettre en pratique la collecte de données,
+                leur analyse et la rédaction de rapports.
+            </p>
+
+            <p>
+                Mon objectif est aujourd'hui de développer mes
+                compétences professionnelles grâce à une alternance
+                de deux ans.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMPETENCES
+========================================================= -->
+
+<section id="competences">
+
+    <div class="section-header">
+
+        <div class="label">
+            COMPÉTENCES
+        </div>
+
+        <h2>
+            Mes outils & expertises
+        </h2>
+
+        <p>
+            Des compétences techniques pour transformer les données
+            en informations utiles.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <!-- Python -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🐍
+            </div>
+
+            <h3>
+                Programmation
+            </h3>
+
+            <ul>
+                <li>Python</li>
+                <li>R — Statistiques</li>
+                <li>SQL</li>
+            </ul>
+
+        </div>
+
+
+        <!-- BI -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                📊
+            </div>
+
+            <h3>
+                Business Intelligence
+            </h3>
+
+            <ul>
+                <li>Power BI</li>
+                <li>Visualisation de données</li>
+                <li>Tableaux de bord</li>
+            </ul>
+
+        </div>
+
+
+        <!-- Excel -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                📑
+            </div>
+
+            <h3>
+                Bureautique avancée
+            </h3>
+
+            <ul>
+                <li>Microsoft Excel</li>
+                <li>Excel avancé</li>
+                <li>Macros VBA</li>
+                <li>Microsoft Access</li>
+            </ul>
+
+        </div>
+
+
+        <!-- Data -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🔎
+            </div>
+
+            <h3>
+                Préparation des données
+            </h3>
+
+            <ul>
+                <li>Collecte de données brutes</li>
+                <li>Nettoyage des données</li>
+                <li>Préparation des jeux de données</li>
+            </ul>
+
+        </div>
+
+
+        <!-- Statistiques -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                📈
+            </div>
+
+            <h3>
+                Statistiques
+            </h3>
+
+            <ul>
+                <li>Analyse descriptive</li>
+                <li>Analyse inférentielle</li>
+                <li>Interprétation statistique</li>
+            </ul>
+
+        </div>
+
+
+        <!-- Modélisation -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🧩
+            </div>
+
+            <h3>
+                Analyse & Modélisation
+            </h3>
+
+            <ul>
+                <li>Modélisation de données</li>
+                <li>Interprétation</li>
+                <li>Graphiques et tableaux</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCES
+========================================================= -->
+
+<section id="experiences">
+
+    <div class="section-header">
+
+        <div class="label">
+            EXPÉRIENCES
+        </div>
+
+        <h2>
+            Mon parcours professionnel
+        </h2>
+
+        <p>
+            Des expériences concrètes dans l'étude et l'analyse
+            de données.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <!-- EXPERIENCE 1 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <div class="date">
+                    SEPTEMBRE 2025 — JUIN 2026
+                </div>
+
+                <h3>
+                    Chargée d'étude de marché
+                </h3>
+
+                <h4>
+                    Weekend Gourmand Du Chat Perché — WGDCP
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Conception et administration de
+                        questionnaires auprès des visiteurs.
+                    </li>
+
+                    <li>
+                        Collecte des avis sur l'organisation
+                        générale de l'événement.
+                    </li>
+
+                    <li>
+                        Analyse des données collectées.
+                    </li>
+
+                    <li>
+                        Rédaction d'un rapport présentant les
+                        principaux résultats et recommandations.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPERIENCE 2 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <div class="date">
+                    DÉCEMBRE 2025 — JANVIER 2026
+                </div>
+
+                <h3>
+                    Chargée d'étude de marché
+                </h3>
+
+                <h4>
+                    Secteur cosmétique — Bourgogne-Franche-Comté
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Réalisation d'une étude de marché sur le
+                        secteur cosmétique.
+                    </li>
+
+                    <li>
+                        Analyse de la concurrence.
+                    </li>
+
+                    <li>
+                        Analyse des canaux de distribution.
+                    </li>
+
+                    <li>
+                        Analyse des données d'enquêtes terrain.
+                    </li>
+
+                    <li>
+                        Évaluation du potentiel de la région comme
+                        marché test.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPERIENCE 3 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <div class="date">
+                    OCTOBRE 2025 — NOVEMBRE 2025
+                </div>
+
+                <h3>
+                    Analyse documentaire et statistique
+                </h3>
+
+                <h4>
+                    Projet d'étude
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Analyse et synthèse d'un article de l'INSEE.
+                    </li>
+
+                    <li>
+                        Interprétation des données statistiques.
+                    </li>
+
+                    <li>
+                        Analyse répondant aux besoins du
+                        commanditaire.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMATIONS
+========================================================= -->
+
+<section id="formations">
+
+    <div class="section-header">
+
+        <div class="label">
+            FORMATIONS
+        </div>
+
+        <h2>
+            Mon parcours académique
+        </h2>
+
+    </div>
+
+
+    <div class="education-grid">
+
+
+        <div class="education-card">
+
+            <div class="year">
+                2026 — 2027
+            </div>
+
+            <h3>
+                BUT Sciences des Données
+            </h3>
+
+            <p>
+                Université Marie et Louis Pasteur
+            </p>
+
+            <p>
+                Analyse de données, statistiques, programmation,
+                bases de données et visualisation.
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="year">
+                2024 — 2025
+            </div>
+
+            <h3>
+                Licence 1 — Énergies renouvelables
+            </h3>
+
+            <p>
+                Université Cheikh Anta Diop de Dakar
+            </p>
+
+            <p>
+                Sénégal
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div class="year">
+                Diplôme obtenu
+            </div>
+
+            <h3>
+                Baccalauréat scientifique sénégalais
+            </h3>
+
+            <p>
+                Mention Bien
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LANGUES / LOISIRS
+========================================================= -->
+
+<section>
+
+    <div class="two-columns">
+
+
+        <div class="info-card">
+
+            <h3>
+                🌍 Langues
+            </h3>
+
+            <div class="info-item">
+
+                <span>
+                    Français
+                </span>
+
+                <strong>
+                    Courant
+                </strong>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>
+                    Anglais
+                </span>
+
+                <strong>
+                    Intermédiaire
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                ✨ Loisirs
+            </h3>
+
+            <div class="info-item">
+
+                <span>
+                    🏃 Course à pied
+                </span>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>
+                    🍳 Cuisine
+                </span>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>
+                    📚 Lecture — Littérature & romance
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ALTERNANCE
+========================================================= -->
+
+<section>
+
+    <div class="alternance">
+
+        <h2>
+            🎯 À la recherche d'une alternance
+        </h2>
+
+        <p>
+            Je souhaite rejoindre une entreprise dans le cadre
+            d'une alternance de deux ans afin de mettre en pratique
+            mes compétences en analyse de données, statistiques,
+            programmation et Business Intelligence.
+        </p>
+
+        <a href="#contact" class="btn">
+            Échanger avec moi →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="section-header">
+
+        <div class="label">
+            CONTACT
+        </div>
+
+        <h2>
+            Parlons de votre projet
+        </h2>
+
+        <p>
+            Vous recherchez un profil étudiant en Sciences des
+            Données pour une alternance ?
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+            <div class="icon">
+                📧
+            </div>
+
+            <h3>
+                Email
+            </h3>
+
+            <p>
+                tthiapato@gmail.com
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">
+                📱
+            </div>
+
+            <h3>
+                Téléphone
+            </h3>
+
+            <p>
+                +33 07 58 38 30 25
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">
+                💼
+            </div>
+
+            <h3>
+                LinkedIn
+            </h3>
+
+            <a href="#" target="_blank">
+                Mon profil LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <p>
+        © 2026 — Portfolio Sciences des Données
+    </p>
+
+    <p>
+        Conçu avec HTML & CSS
+    </p>
+
+</footer>
+
+
+</body>
+</html>
+```
